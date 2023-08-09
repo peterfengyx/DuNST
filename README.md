@@ -6,14 +6,14 @@ Official script of [ACL 2023 paper: DuNST: Dual Noisy Self Training for Controll
 Self-training (ST) has prospered again in language understanding by augmenting the fine-tuning of big pre-trained models when labeled data is insufficient. However, it remains challenging to incorporate ST into attribute-controllable language generation. Augmented only by self-generated pseudo text, generation models over-exploit the previously learned text space and fail to explore a larger one, suffering from a restricted generalization boundary and limited controllability. In this work, we propose DuNST, a novel ST framework to tackle these problems. DuNST jointly models text generation and classification as a dual process and further perturbs and escapes from the collapsed space by adding two kinds of flexible noise. In this way, our model could construct and utilize both pseudo text generated from given labels and pseudo labels predicted from available unlabeled text, which are gradually refined during the ST phase. 
 
 ## Repository
-···
+```
 DuNST
 ├── data
 ├── corpus
 ├── codes
 ├── (unilm)
 └── (your evaluation classifier)
-···
+```
 
 ## Data
 You can download the training data of [IMDb](https://huggingface.co/datasets/imdb), [AGNews](https://huggingface.co/datasets/ag_news) from Huggingface. [Jigsaw](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/) dataet can be found on Kaggle.
@@ -22,12 +22,15 @@ We use UniLM1-base-cased for our base model. Please download it from the followi
 
 ## Training
 This code can be ran with single GPU. Script that works on multi GPU is on process. 
-Simply run [codes/train.py] to replicate our experimental result.
-You are free to play with the hyperparameters and settings in [codes/config.py].
+
+Simply run [train.py](codes/train.py) to replicate our experimental result.
+
+You are free to play with the hyperparameters and settings in [config.py](codes/config.py).
 
 ## Evaluation/Inference
-[codes/evaluation.py] evaluates the classification performance of trained model (F1) and generalizability of generation (Model PPL).
-[codes/generation.py] generates samples of given prompt and evaluates the fluency (Output PPL), classification, and diversity (Dist, Self-BLEU).
+[evaluation.py](codes/evaluation.py) evaluates the classification performance of trained model (F1) and generalizability of generation (Model PPL).
+
+[generation.py](codes/generation.py) generates samples of given prompt and evaluates the fluency (Output PPL), classification, and diversity (Dist, Self-BLEU).
 
 
 ## License
