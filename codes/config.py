@@ -50,7 +50,7 @@ class ExtraArguments:
     st_start_step: int = 1
     st_sampling: str = ""
     st_select: str = "argmax"
-    gen_temperature: float = 1.0
+    gen_temperature: float = 5.0
     
     cl_decay: float = 5*1e-3
     cl_annealing_steps: int = field(default=320000) #3200
